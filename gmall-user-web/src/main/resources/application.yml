@@ -1,0 +1,27 @@
+# 服务端口
+server:
+  port: 8080
+
+spring:
+  application:
+    name: user-web
+
+# Logger Config
+logging:
+  level:
+    root: info
+
+# dubbo
+dubbo:
+  scan:
+    base-packages: com.apesbook.gmall
+  application:
+    name: ${spring.application.name}
+  protocol:
+    name: dubbo
+  registry:
+    address: 129.211.46.153:2181
+    protocol: zookeeper
+  consumer:
+    timeout: 600000
+    check: false

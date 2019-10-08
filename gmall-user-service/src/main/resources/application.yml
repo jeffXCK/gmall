@@ -1,0 +1,46 @@
+# 服务端口
+server:
+  port: 8070
+
+# Logger Config
+logging:
+  level:
+    root: info
+
+# spring
+spring:
+  application:
+    name: user-service
+  datasource:
+    username: root
+    password: MysqlVersion5.7.27
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://129.211.46.153:3306/gmall?characterEncoding=utf-8
+
+# mybtais-plus
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+      table-underline: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+
+# dubbo
+dubbo:
+  scan:
+    base-packages: com.apesbook.gmall
+  application:
+    name: ${spring.application.name}
+  protocol:
+    name: dubbo
+    port: 20880
+  registry:
+    address: 129.211.46.153:2181
+    protocol: zookeeper
+

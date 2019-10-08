@@ -1,0 +1,38 @@
+# \u670D\u52A1\u7AEF\u53E3
+server:
+  port: 8081
+
+spring:
+  application:
+    name: manage-web
+
+# Logger Config
+logging:
+  level:
+    root: info
+
+# dubbo
+dubbo:
+  scan:
+    base-packages: com.apesbook.gmall
+  application:
+    name: ${spring.application.name}
+  protocol:
+    name: dubbo
+  registry:
+    address: 129.211.46.153:2181
+    protocol: zookeeper
+  consumer:
+    timeout: 600000
+    check: false
+
+#分布式文件存储
+fastdfs:
+  fastdfs_server: http://129.211.46.153
+  connect_timeout_in_seconds: 5
+  network_timeout_in_seconds: 30
+  charset: UTF-8
+  http_anti_steal_token: false
+  http_secret_key: FastDFS1234567890
+  http_tracker_http_port: 80
+  tracker_servers: 129.211.46.153:22122

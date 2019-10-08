@@ -1,0 +1,4 @@
+com\apesbook\gmall\service\MemberReceiveAddressService.class
+com\apesbook\gmall\service\MemberService.class
+com\apesbook\gmall\bean\UmsMemberReceiveAddress.class
+com\apesbook\gmall\bean\UmsMember.class
